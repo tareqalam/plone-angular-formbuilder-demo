@@ -42,6 +42,12 @@ export class SchemaFormFolderComponent extends ViewView {
 
     });
     this.actions['save'] = (form, options) => {
+        let schema_form_data = {'schema_form_data': JSON.stringify(form.value)}
+        console.log(schema_form_data);
+        this.services.api.post(target.path + '/@schemaformdata', schema_form_data).subscribe(message => {
+            console.log(message);
+          });
+
           alert(JSON.stringify(form.value));
         };
   }
