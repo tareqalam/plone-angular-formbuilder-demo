@@ -37,7 +37,13 @@ export class SchemaFormFolderComponent extends ViewView {
 
       this.schema = schema;
       this.model = model;
+
+
+
     });
+    this.actions['save'] = (form, options) => {
+          alert(JSON.stringify(form.value));
+        };
   }
 
    mySchema = {
